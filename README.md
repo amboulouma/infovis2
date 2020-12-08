@@ -1,6 +1,6 @@
 ### Information Visualization - Information Campaign on Ecosystem Stability
 
-##Authors:
+## Authors:
 Andreea-Valentina Roman
 Isaak Mengesha
 Mohamed Amine Boulouma
