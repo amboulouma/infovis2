@@ -1,8 +1,15 @@
 var data = [];
 var maxData;
 
+// let algaeBloomsData;
+
+// function preload() {
+//   algaeBloomsData = loadTable("/data_per_months.csv", "header");
+// }
+
 function setup() {
   createCanvas(800, 800);
+  // console.log(algaeBloomsData);
   angleMode(DEGREES);
   rectMode(BOTTOM);
   for (var i = 0; i < 100; i = i + 1) {
@@ -26,8 +33,7 @@ function draw() {
     maxValue = 400;
   }
   var offset = 200;
-  var dataMultiplier = (height/2-offset-padding) / maxData;
-
+  var dataMultiplier = (height / 2 - offset - padding) / maxData;
 
   for (var i = 0; i < data.length; i = i + 1) {
     push();
@@ -36,10 +42,8 @@ function draw() {
     var animatedHeight = map(maxValue, 0, 400, 0, finalHeight);
     translate(width / 2, height / 2);
     rotate(angleSeparation * i);
-    rect(0, offset, angleSeparation*2, animatedHeight);
-    text(Math.floor(currentData), offset-20, 0);
+    rect(0, offset, angleSeparation * 2, animatedHeight);
+    text(Math.floor(currentData), offset - 20, 0);
     pop();
   }
-
-
 }
