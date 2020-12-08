@@ -29,7 +29,7 @@ A permissive license that comes in two variants, the BSD 2-Clause and BSD 3-Clau
 
 ## Multiple environments used:
 
-Windows 10 with Visual Studio Code 1.51.1
+Windows 10 with Visual Studio Code 1.51.1, Ubuntu 18.04 with Visual Studio Code
 
 ## How to run the project:
 
