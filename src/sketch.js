@@ -1,49 +1,21 @@
 var data = [];
 var maxData;
 
-// let algaeBloomsData;
+let algaeBloomsData;
 
-// function preload() {
-//   algaeBloomsData = loadTable("/data_per_months.csv", "header");
-// }
+function preload() {
+  algaeBloomsData = loadTable("/data/algae_blooms.csv", "header");
+}
 
 function setup() {
-  createCanvas(800, 800);
-  // console.log(algaeBloomsData);
-  angleMode(DEGREES);
-  rectMode(BOTTOM);
-  for (var i = 0; i < 100; i = i + 1) {
-    var randomNumber = random(20, 80);
-    data.push(randomNumber);
-  }
-  maxData = max(data);
+  createCanvas(windowWidth, windowHeight);
+  console.log(algaeBloomsData);
 }
 
 function draw() {
   background(43, 53, 63);
-  fill(255, 255, 0);
-  stroke(89, 86, 74);
+}
 
-  var angleSeparation = 360 / data.length;
-  var padding = 10;
-
-  if (frameCount <= 400) {
-    maxValue = constrain(frameCount * 2, 0, 400);
-  } else {
-    maxValue = 400;
-  }
-  var offset = 200;
-  var dataMultiplier = (height / 2 - offset - padding) / maxData;
-
-  for (var i = 0; i < data.length; i = i + 1) {
-    push();
-    var currentData = data[i];
-    var finalHeight = currentData * dataMultiplier;
-    var animatedHeight = map(maxValue, 0, 400, 0, finalHeight);
-    translate(width / 2, height / 2);
-    rotate(angleSeparation * i);
-    rect(0, offset, angleSeparation * 2, animatedHeight);
-    text(Math.floor(currentData), offset - 20, 0);
-    pop();
-  }
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
