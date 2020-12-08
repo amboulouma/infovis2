@@ -24,14 +24,14 @@ The project is available on: https://amboulouma.github.io/infovis2/
 
 ## Locally:
 ### With Node 
-Check if you have node installed: in the terminal write "node -v". It will display the current version of node
+Check if you have node installed: in the terminal write `node -v`. It will display the current version of node
 If you don't have it installed, can install it from https://nodejs.org/en/download/
-After node is installed, in the terminal write "npm install -g http-server"
-In the project folder, start the server with: "http-server"
+After node is installed, in the terminal write `npm install -g http-server`
+In the project folder, start the server with: `http-server`
 
 ### With Python (already installed if you are using MAC OS)
 Type in Terminal:
-python -m SimpleHTTPServer
+`python -m SimpleHTTPServer`
 Or if you are using Python 3, type:
-python -m http.server
+`python -m http.server`
 Then visit http://localhost:8000 on your browser.
