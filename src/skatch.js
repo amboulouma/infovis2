@@ -1,7 +1,7 @@
 const options = {
   lat: 37.799592,
   lng: -122.494012,
-  zoom: 8.4,
+  zoom: 8.5,
   style: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
 };
 let canvas;
@@ -91,7 +91,7 @@ let sketch = function (p) {
         let long = latlong[1];
 
         const pixel = myMap.latLngToPixel(lat, long);
-        p.ellipse(pixel.x, pixel.y, 5, 5);
+        p.ellipse(pixel.x, pixel.y, 20, 20);
       }
     }
   };
