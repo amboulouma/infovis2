@@ -2,8 +2,35 @@
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.min.js" type="text/javascript"></script>
     <script src="../lib/mappa.js"></script>
+    <script src="skatch.js"></script>
+    <style> 
+    body {padding: 0; 
+      margin: 0;
+      background-color: rgb(184, 212, 207);
+    } 
+
+    .elements{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+
+    .title{
+      margin-top: 20px;
+      text-align: center;
+    }
+
+  </style>
   </head>
   <body>
-    <script src="script.js"></script>
+    <h1 class="title">Information Campaign on Ecosystem Stability</h1>
+    <div class="elements">
+  <div id="first">
+    <p>Algae Blooms on San Francisco Bay</p>
+  </div> <br>
+  <div id="second">
+    <p>Temperature Increase on San Francisco Bay</p>
+  </div>
+</div>
   </body>
 </html>
