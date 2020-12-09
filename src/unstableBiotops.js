@@ -1,43 +1,39 @@
-let randomY = [];
-let numPts = 25;
+// what's wrong with this approach?
+// (think about the relationship between
+// the values in the CSV file and what's
+// drawn on the screen.)
 
-function setup() {
-  createCanvas(400, 400);
+let data;
+
+// preload table data
+function preload() {
+  data = loadTable(
+    '../data/data_unstable_biotops.csv',
+		'csv',
+		'header');
+}
+
+function setup() { 
+  createCanvas(640, 480);
   
-  for(let i =0; i< numPts; i++){
-   randomY.push(random(100,300)); 
-  }
-}
+  // how many rows?
+  console.log(data.getRowCount());
+  // what are the columns?
+  console.log(data.columns);
 
-function draw() {
-  background(220);
-  
-  drawLines();
-  drawEllipses();
-}
+  background(50);
+  stroke(255);
 
-function drawEllipses(){
-  noStroke();
-    // draw ellipses
-  for(let i =0; i < randomY.length; i++){
-    let x = i * (width / (numPts-1));
-    let y = randomY[i];
-    ellipse(x, y, 7);
-  }
-}
-
-function drawLines(){
-  stroke(0);
- // draw lines
-  let px = 0;
-  let py = randomY[0];
-  for(let i =0; i < randomY.length; i++){
-    let x = i * (width / (numPts-1));
-    let y = randomY[i];
-    line(px, py, x, y);
+  // noprotect
+  for (var i = 0; i < data.getRowCount(); i++) {
     
-  	//store the last position
-    px = x;
-    py = y;
-  } 
+    // draw temperatures
+    let xpos = map(i, 0, data.getRowCount(), 0, width);
+    // data.getNum(m, n) evaluates to the value in the
+    // cell for row m in column n.
+    // replace "TEMP" with some other column name to
+    // display a different column.
+    point(xpos, data.getNum(i, "TEMP"));
+    
+  }
 }
