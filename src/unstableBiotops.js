@@ -37,7 +37,7 @@ function setup() {
 
      // When reading the csv, I must format variables:
     function(d){
-      return { date : d3.timeParse("%Y-%m-%d")(d.date), calculatedOxygen : d.CalculatedOxygen }
+      return { date : d3.timeParse("%Y-%m-%d")(d.TimeStamp), calculatedOxygen : Number(d.CalculatedOxygen) }
     },
 
     // Now I can use this dataset:
