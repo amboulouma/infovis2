@@ -53,7 +53,7 @@ function setup() {
 
       // Add Y axis
       var y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return + d.CalculatedOxygen; })])
+        .domain([0, d3.max(data, function(d) { return + d.calculatedOxygen; })])
         .range([ height, 0 ]);
       svg.append("g")
         .call(d3.axisLeft(y));
@@ -66,7 +66,7 @@ function setup() {
         .attr("stroke-width", 1.5)
         .attr("d", d3.line()
           .x(function(d) { return x(d.date) })
-          .y(function(d) { return y(d.CalculatedOxygen) })
+          .y(function(d) { return y(d.calculatedOxygen) })
           )
   });
 }
