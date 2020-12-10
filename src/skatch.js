@@ -98,22 +98,3 @@ let sketch = function (p) {
 };
 
 let firstSketch = new p5(sketch, "first");
-
-let sketch2 = function (p) {
-  let temperatureData;
-  const mappa = new Mappa("Leaflet");
-
-  p.preload = function () {
-    temperatureData = p.loadTable("/data/algae_blooms.csv", "header");
-  };
-
-  p.setup = function () {
-    canvas = p.createCanvas(400, 600);
-    myMap = mappa.tileMap(options);
-    myMap.overlay(canvas);
-  };
-
-  p.draw = function () {};
-};
-
-let secondSketch = new p5(sketch2, "second");
