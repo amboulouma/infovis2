@@ -4,6 +4,8 @@ df = pd.read_csv("../data/data_per_months.csv")
 
 df = df[['TimeStamp', 'Station.Number','Oxygen.Electrode.Output','Oxygen.Saturation.percent','Calculated.Oxygen']]
 
+df['TimeStamp'] = df['TimeStamp'].apply(lambda x: x + '-01')
+
 df = df.dropna()
 
 df.to_csv("../data/data_unstable_biotops.csv")
