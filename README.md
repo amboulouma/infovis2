@@ -33,8 +33,6 @@ Windows 10 with Visual Studio Code 1.51.1, Ubuntu 18.04 with Visual Studio Code
 
 ## How to run the project:
 
-The project is available on: https://amboulouma.github.io/infovis2/
-
 ## Locally:
 
 ### With Node
