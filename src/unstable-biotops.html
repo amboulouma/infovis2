@@ -1,13 +1,60 @@
 <html>
-  <head>
+
+<head>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
     <script src="https://d3js.org/d3.v4.js"></script>
     <script src="unstableBiotops.js"></script>
-    
-  </head>
-  <body>
+    <script src="https://cdn.jsdelivr.net/npm/danfojs@0.1.2/dist/index.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: rgb(184, 212, 207);
+            font-family: 'Tangerine', serif;
+            ;
+        }
+        
+        .elements {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        
+        .title {
+            margin-top: 20px;
+            font-size: 50px;
+            text-align: center;
+        }
+        
+        p {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        #first,
+        #second {
+            max-width: 400px;
+        }
+        
+        img {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
     <main>
-      <div id="my_dataviz"></div>
+        <form id="myForm">
+            Station Number: <select id="stations" onchange="setup()">
+            </select>
+        </form>
+        <br/>
+        <br/>
+        <div id="my_dataviz"></div>
+
+
+
     </main>
-  </body>
+</body>
+
 </html>
