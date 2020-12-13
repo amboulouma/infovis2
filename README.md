@@ -15,6 +15,14 @@ Mohamed Amine Boulouma
 The p5.js library is free software; you can redistribute it and/or modify it under the terms of theGNU Lesser General Public License as published by the Free Software Foundation, version 2.1.
 The Reference for the language is under a Creative Commons license which makes it possible to reuse this content for non-commercial purposes if it is credited.
 
+### P5.js
+
+p5.js is a JavaScript library for creative coding, with a focus on making coding accessible and inclusive for artists, designers, educators, beginners, and anyone else! p5.js is free and open-source.
+
+### Danfo.js
+
+Danfo.js is an open-source, JavaScript library providing high-performance, intuitive, and easy-to-use data structures for manipulating and processing structured data.
+
 ### Mappa
 
 Licence  
@@ -29,7 +37,7 @@ A permissive license that comes in two variants, the BSD 2-Clause and BSD 3-Clau
 
 ## Multiple environments used:
 
-Windows 10 with Visual Studio Code 1.51.1, Ubuntu 18.04 with Visual Studio Code
+Windows 10 with Visual Studio Code 1.51.1, MacOS High Sierra with Visual Studio Code
 
 ## How to run the project:
 
