@@ -2,75 +2,50 @@ let W = 500;
 let H = 500;
 let svg;
 
-// function preload() {
-//   data = loadTable("/data/data_unstable_biotops.csv", "header");
-// };
-
 function setup() {
-  createCanvas(W, H);
-  fill(255, 30, 70, 90);    
+    createCanvas(W, H);
+    fill(255, 30, 70, 90);
 
-  var margin = {left: 50, right: 20, top: 20, bottom: 50 };
 
-  var width = 960 - margin.left - margin.right;
-  var height = 500 - margin.top - margin.bottom;
-  var max = 0;
+    dfd.read_csv("/data/data_unstable_biotops.csv")
+        .then(df => {
 
-  var xNudge = 50;
-  var yNudge = 20;
+            let stations = df['StationNumber'].unique().values
 
-  var minDate = new Date();
-  var maxDate = new Date();
+            var select = document.getElementById("stations");
 
-  // append the svg object to the body of the page
-  var svg = d3.select("#my_dataviz")
-  .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-  .append("g")
-    .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
+            for (var i = 0; i < stations.length; i++) {
+                var opt = stations[i];
+                var el = document.createElement("option");
+                el.textContent = opt;
+                el.value = opt;
+                select.appendChild(el);
+            }
 
-  var parseDate = d3.timeParse("%Y-%m-%d");
+            var e = document.getElementById("stations");
+            var station = e.value;
 
-  d3.csv("/data/data_unstable_biotops.csv",
+            let grp = df.groupby(["StationNumber"])
 
-     // When reading the csv, I must format variables:
-    function(d){
-      return { date : d3.timeParse("%Y-%m-%d")(d.TimeStamp), calculatedOxygen : Number(d.CalculatedOxygen) }
-    },
+            var layout = {
+                title: 'Oxygen concentration per date per station',
+                xaxis: { title: 'Date' },
+                yaxis: { title: 'Calculated Oxygen and its percentage' }
+            }
 
-    // Now I can use this dataset:
-    function(data) {
+            new_df = grp.get_groups([station])
+            new_df = new_df.set_index({ key: "TimeStamp" })
+            new_df.plot("my_dataviz").line({
+                columns: ["OxygenSaturationpercent", "CalculatedOxygen"],
+                layout: layout
+            })
 
-      // Add X axis --> it is a date format
-      var x = d3.scaleTime()
-        .domain(d3.extent(data, function(d) { return d.date; }))
-        .range([ 0, width ]);
-      svg.append("g")
-        .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x));
+        }).catch(err => {
+            console.log(err);
+        })
 
-      // Add Y axis
-      var y = d3.scaleLinear()
-        .domain([0, d3.max(data, function(d) { return + d.calculatedOxygen; })])
-        .range([ height, 0 ]);
-      svg.append("g")
-        .call(d3.axisLeft(y));
-
-      // Add the line
-      svg.append("path")
-        .datum(data)
-        .attr("fill", "none")
-        .attr("stroke", "steelblue")
-        .attr("stroke-width", 1.5)
-        .attr("d", d3.line()
-          .x(function(d) { return x(d.date) })
-          .y(function(d) { return y(d.calculatedOxygen) })
-          )
-  });
 }
 
 function draw() {
-  
+
 }
