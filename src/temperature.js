@@ -15,7 +15,7 @@ let december = [];
 
 let selectedYear = [
   10,
-  0,
+  NaN,
   9.636363636363637,
   10.416666666666666,
   9.81081081081081,
@@ -28,6 +28,7 @@ let selectedYear = [
   8.621621621621621,
   10.162162162162161,
   8.35483870967742,
+  10.46,
 ];
 function setup() {
   sel = createSelect();
@@ -45,7 +46,7 @@ function setup() {
   sel.option("December");
   sel.changed(changeBg);
 
-  createCanvas(700, 700);
+  createCanvas(700, 600);
   let temperatureValues;
   let date;
   let aparitionsFeb = [];
@@ -170,11 +171,18 @@ const textTitle = "Average Water Temperature per Month between 2000-2014";
 function draw() {
   background(184, 212, 207);
   textStyle(BOLD);
-  text(textTitle, 30, 200);
+
   for (let i = 0; i < selectedYear.length; i++) {
     text(years[i], i * 40 + 25, 570);
     rect(i * 40 + 30, 250 - selectedYear[i], 20, 300 + selectedYear[i]);
+    if (isNaN(parseFloat(selectedYear[i]))) {
+      text("---", i * 40 + 32, 220);
+    } else {
+      text(selectedYear[i].toFixed(2), i * 40 + 25, 220);
+    }
   }
+  text("Years", 320, 590);
+  text("Temperature (Celsius)", 0, 200);
 
   for (let k = 0; k <= 13; k = k + 3) {
     text(k, 10, 550 - 25 * k);
@@ -213,5 +221,3 @@ function changeBg() {
     selectedYear = december;
   }
 }
-
-console.log("selected year", selectedYear);
