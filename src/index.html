@@ -1,71 +1,123 @@
 <html>
-  <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.min.js" type="text/javascript"></script>
-    <script src="../lib/mappa.js"></script>
-    <script src="skatch.js"></script>
-    <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Tangerine">
-    <style> 
-    body {padding: 0; 
+
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.min.js" type="text/javascript"></script>
+  <script src="../lib/mappa.js"></script>
+  <script src="skatch.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+  <link href="https://fonts.googleapis.com/css2?family=Cuprum&display=swap" rel="stylesheet">
+
+
+  <style>
+    body {
+      padding: 0;
       margin: 0;
       background-color: rgb(184, 212, 207);
-      font-family:'Tangerine', serif;;
-    } 
+      font-family: 'Cuprum', sans-serif;
+    }
 
-    .elements{
+    .elements {
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
+      padding-bottom: 30px;
     }
 
-    .title{
-      margin-top: 20px;
-      font-size: 50px;
-      text-align: center;
+    .title {
+      font-size: 40px;
+      background-color: white;
+      margin-top: 0;
+      padding: 20 0;
+      box-shadow: 0 10px 10px 0 rgba(5, 34, 58, 0.5);
+      padding-left: 5%
     }
 
-    p{
-      font-family: 'Courier New', Courier, monospace;
+    p {
+      font-size: 21px;
     }
 
-    #first, #second, #third{
-      max-width: 400px;
+    #first,
+    #second,
+    #third {
+      max-width: 20%;
     }
 
-    img{
-      margin-top: 50px;
+    #first,
+    #third {
+      border-right: white solid 2px;
     }
-    
+
+    #third {
+      padding-right: 170px;
+    }
+
+    #first {
+      padding-right: 100px;
+    }
+
+    .arrow {
+      margin-top: 100px;
+      max-width: 65%;
+    }
+
+    .arrow2 {
+      margin-top: 150px;
+      max-width: 35%;
+      height: 260px;
+    }
+
+    .arrows {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .algaeText {
+      margin-bottom: 50px;
+    }
   </style>
-  </head>
-  <body>
-    <h1 class="title">Information Campaign on Ecosystem Stability</h1>
-    <div class="elements">
-  <div id="first">
-    <h1>Algae Blooms on San Francisco Bay</h1>
-    <p>Station of the San Francisco Bay where the Algae Blooms have been developed during the year 2013</p>
-  </div> <br>
-  <div id="third">
-    <h1>Unstable Biotopes</h1>
-    <p>Dead Zones are areas in the ocean in which the concentration of oxygen drops below a
-      certain threshold value. Of course this is an event that happens throughout the time of
-      measurements at different locations and is a rather probabilistic process. Nevertheless,
-      there is clear evidence for a human contribution through concentration levels of several
-      chemicals. </p>
-    <p><a href="unstable-biotops.html">Unstable Biotops</a></p>
-   
-  </div>
-  <div id="second">
-    <h1>Temperature Increase on San Francisco Bay</h1><br>
-    <p>Increase of the water temperature in the San Francisco Bay over the last years (2000 - 2014)</p><br>
-    <p>Many species are sensitive to maximum or minimum temperatures that are reached throughout a year. Consequently it is relevant to compare certain months in summer or winter specifically across time. For this follow the link below and select the month that is relevant for you.</p>
-    <img src="/data/temperatureheatmap.PNG"> <br>
-   <p id="check"> <a href="temperature.html">Check it here</a></p>
-  </div>
- 
-  <main>
+</head>
 
-  </main>
-</div>
-  </body>
+<body>
+  <h1 class="title"></h1>
+  <div class="elements">
+
+
+    <div id="first">
+      <h1>Information Campaign on Ecosystem Stability</h1>
+      <h2>Our goal?</h2>
+      <p>Trying to raise awareness for the disruptions of local ecosystems by human-caused
+        pollution.</p>
+      <div class="arrows">
+        <img class="arrow" src="/data/arrow2.png">
+        <img class="arrow2" src="/data/arrow2.png">
+      </div>
+
+    </div>
+
+    <div id="third">
+      <h2>Temperature Increase on San Francisco Bay</h2>
+      <p>Increase of the water temperature in the San Francisco Bay over the last years (2000 - 2014)</p>
+      <p>Many species are sensitive to maximum or minimum temperatures that are reached throughout a year. Consequently
+        it is relevant to compare certain months in summer or winter specifically across time. For this follow the link
+        below and select the month that is relevant for you.</p>
+      <p id="check"> <a href="temperature.html">Fallow the link to find more</a></p><br>
+
+      <h2>Unstable Biotopes</h2>
+      <p>Dead Zones are areas in the ocean in which the concentration of oxygen drops below a
+        certain threshold value. Of course this is an event that happens throughout the time of
+        measurements at different locations and is a rather probabilistic process. Nevertheless,
+        there is clear evidence for a human contribution through concentration levels of several
+        chemicals. </p>
+      <p><a href="unstable-biotops.html">See the dead zones graph</a></p>
+    </div>
+    <div id="second">
+      <h2>Algae Blooms on San Francisco Bay</h2>
+      <p class="algaeText">Stations of the San Francisco Bay where the Algae Blooms have been developed during the year
+        2013</p>
+        <h5>*Parameters and threshold values are mostly arbitrarily chosen. Optimal level of Nitrate: 2.6 , optimal level of Phosphate: 0.2 </h5>
+    </div> <br>
+
+  </div>
+</body>
+
 </html>

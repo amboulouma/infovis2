@@ -15,7 +15,7 @@ let sketch = function (p) {
   };
 
   p.setup = function () {
-    canvas = p.createCanvas(400, 600);
+    canvas = p.createCanvas(400, 550);
 
     let nitrateSum = [];
     let phosphateSum = [];
@@ -97,4 +97,4 @@ let sketch = function (p) {
   };
 };
 
-let firstSketch = new p5(sketch, "first");
+let firstSketch = new p5(sketch, "second");
