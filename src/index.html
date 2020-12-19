@@ -4,7 +4,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.16/p5.min.js" type="text/javascript"></script>
   <script src="../lib/mappa.js"></script>
   <script src="skatch.js"></script>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
   <link href="https://fonts.googleapis.com/css2?family=Cuprum&display=swap" rel="stylesheet">
 
 
@@ -19,10 +18,10 @@
     .elements {
       display: flex;
       flex-direction: row;
-      justify-content: space-evenly;
+      justify-content: center;
       padding-bottom: 30px;
     }
-
+  
     .title {
       font-size: 40px;
       background-color: white;
@@ -42,18 +41,25 @@
       max-width: 20%;
     }
 
-    #first,
-    #third {
+    #first
+     {
+     margin-right: 50px
+    }
+
+    #second {
+      margin-left: 50px
+    }
+
+     #third {
+      padding: 0 100px;
+      margin: 0 100px;
       border-right: white solid 2px;
+      border-left: white solid 2px;
     }
 
-    #third {
-      padding-right: 170px;
-    }
-
-    #first {
+    /* #first {
       padding-right: 100px;
-    }
+    } */ 
 
     .arrow {
       margin-top: 100px;
@@ -74,6 +80,38 @@
     .algaeText {
       margin-bottom: 50px;
     }
+
+    @media only screen and (max-width: 1025px) {
+      .elements {
+        flex-direction: column;
+        text-align: center;
+        margin: auto 50px;
+        align-items: center;
+      }
+
+      #first, #second, #third {
+        max-width: unset;
+        border: none;
+        padding: unset;
+      }
+
+      #second {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: unset;
+      }
+
+      #first {
+        margin: 0 100px;
+      }
+
+      .arrows{
+        display: none;
+      }
+
+    }
+
   </style>
 </head>
 
@@ -86,7 +124,7 @@
       <h1>Information Campaign on Ecosystem Stability</h1>
       <h2>Our goal?</h2>
       <p>Trying to raise awareness for the disruptions of local ecosystems by human-caused
-        pollution.</p>
+        pollution in the San Francisco Bay.</p>
       <div class="arrows">
         <img class="arrow" src="/data/arrow2.png">
         <img class="arrow2" src="/data/arrow2.png">
@@ -114,7 +152,8 @@
       <h2>Algae Blooms on San Francisco Bay</h2>
       <p class="algaeText">Stations of the San Francisco Bay where the Algae Blooms have been developed during the year
         2013</p>
-        <h5>*Parameters and threshold values are mostly arbitrarily chosen. Optimal level of Nitrate: 2.6 , optimal level of Phosphate: 0.2 </h5>
+      <h5>*Parameters and threshold values are mostly arbitrarily chosen. Optimal level of Nitrate: 2.6 , optimal level
+        of Phosphate: 0.2 </h5>
     </div> <br>
 
   </div>
